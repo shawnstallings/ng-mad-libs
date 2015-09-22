@@ -19,11 +19,18 @@
         </div>
       </div>
       <div class="enter-words">
-        <h1 class="provide">Provide the following words:</h1>
+        <h1 class="provide">Pick a gender and provide the following words:</h1>
         <table>
           <tbody>
             <tr>
-              <td>Female Name:</td>
+              <td>Gender:</td>
+              <td class="gender">
+                <input type="radio" ng-model="gender" ng-click="male()" value="male"/>Male
+                <input type="radio" ng-model="gender" ng-click="female()" value="female"/>Female
+              </td>
+            </tr>
+            <tr>
+              <td>Name:</td>
               <td><input type="text" ng-model="name"/></td>
             </tr>
            <tr>
@@ -62,8 +69,8 @@
         </table>
       </div>
       <div class="text">
-        <p>{{ name }} was a {{ jobTitle }} who loved technology. Although she loved parts of her job, she absolutely hated {{ tediousTask }} and {{ dirtyTask }}. So, {{ name }} met with her life mentor {{ celebrity }} who told her to learn how to {{ uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ uselessSkill }}, so she decided to study programming instead.</p>
-        <p>What a great decision! With her new skills, {{ name }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity}} that loved to {{ dirtyTask }} but did it {{ hugeNumber }} times faster.</p>
+        <p>{{ name }} was a {{ jobTitle }} who loved technology. Although {{ heShe }} loved parts of {{ hisHer }} job, {{ heShe }} absolutely hated {{ tediousTask }} and {{ dirtyTask }}. So, {{ name }} met with {{ hisHer }} life mentor {{ celebrity }} who told {{ himHer }} to learn how to {{ uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ uselessSkill }}, so {{ heShe }} decided to study programming instead.</p>
+        <p>What a great decision! With {{ hisHer }} new skills, {{ name }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity}} that loved to {{ dirtyTask }} but did it {{ hugeNumber }} times faster.</p>
       </div>
     </div>
   </body>
