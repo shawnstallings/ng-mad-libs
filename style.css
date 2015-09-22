@@ -1,0 +1,77 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Itim', cursive;
+  margin-bottom: 0;
+}
+td {
+  padding: 5px;
+}
+td:first-child {
+  width: 25%;
+  text-align: right;
+}
+p {
+  padding: 0 3rem 0 3rem;
+  font-size: 1.5rem;
+}
+input {
+  width: 50%;
+  height: 1.5rem;
+  padding: 2px;
+}
+input[type="text"],
+input[type="number"] {
+  border-style: solid;
+  border-width: 2px;
+  width: 100%;
+}
+.main {
+  outline: 4px solid #000000;
+  display: block;
+  width: 50%;
+  height: auto;
+  margin: 2rem auto;
+}
+.smiley {
+  display: block;
+  width: 110px;
+  margin: 1.5rem auto;
+}
+.logo {
+  display: block;
+  width: 400px;
+  margin: 2rem auto;
+}
+.header-left {
+  outline: 2px solid #000000;
+  height: 10rem;
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.header-right {
+  outline: 2px solid #000000;
+  height: 10rem;
+  width: 70%;
+  float: left;
+  display: inline-block;
+}
+.enter-words {
+  outline: 2px solid #000000;
+  height: auto;
+  width: 100%;
+  display: inline-block;
+}
+table {
+  width: 70%;
+  margin: 2rem auto;
+}
+.provide {
+ margin: 2rem 0 1rem 3rem;
+}
+.text {
+  outline: 2px solid #000000;
+  height: auto;
+  width: 100%;
+  display: inline-block;
+}
