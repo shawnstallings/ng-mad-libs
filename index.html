@@ -17,61 +17,76 @@
           <img src="images/ng-mad-libs-logo.png" alt="Mad Libs Logo" class="logo">
         </div>
       </div>
-      <div class="enter-words">
+      <div class="enter-words" ng-show="top == 'top'">
         <h1 class="provide">Pick a gender and provide the following words:</h1>
-        <table>
-          <tbody>
-            <tr>
-              <td>Gender:</td>
-              <td class="gender">
-                <input type="radio" ng-model="gender" ng-click="male()" value="male"/>Male
-                <input type="radio" ng-model="gender" ng-click="female()" value="female"/>Female
-              </td>
-            </tr>
-            <tr>
-              <td>Name:</td>
-              <td><input type="text" ng-model="name"/></td>
-            </tr>
-           <tr>
-              <td>Job Title:</td>
-              <td><input type="text" ng-model="jobTitle"/></td>
-            </tr>
-            <tr>
-              <td>Tedious Task:</td>
-              <td><input type="text" ng-model="tediousTask"/></input></td>
-            </tr>
-            <tr>
-              <td>Dirty Task:</td>
-              <td><input type="text" ng-model="dirtyTask"/></td>
-            </tr>
-            <tr>
-              <td>Celebrity:</td>
-              <td><input type="text" ng-model="celebrity"/></input></td>
-            </tr>
-            <tr>
-              <td>Useless Skill:</td>
-              <td><input type="text" ng-model="uselessSkill"/></input></td>
-            </tr>
-            <tr>
-              <td>Adjective:</td>
-              <td><input type="text" ng-model="adjective"/></input></td>
-            </tr>
-            <tr>
-              <td>Obnoxious Celebrity:</td>
-              <td><input type="text" ng-model="obnoxiousCelebrity"/></input></td>
-            </tr>
-            <tr>
-              <td>Huge Number:</td>
-              <td><input type="text" ng-model="hugeNumber"/></input></td>
-            </tr>
-          </tbody>
-        </table>
+        <form name="myForm" novalidate ng-submit="submit()">
+          <table>
+            <tbody>
+              <tr>
+                <td>Gender:</td>
+                <td class="gender">
+                  <input type="radio" ng-model="gender" ng-click="male()" value="male"/>Male
+                  <input type="radio" ng-model="gender" ng-click="female()" value="female"/>Female
+                </td>
+              </tr>
+              <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" ng-model="data.name" required /></td>
+              </tr>
+              <tr>
+                <td>Job Title:</td>
+                <td><input type="text" name="jobTitle" ng-model="data.jobTitle" required /></td>
+              </tr>
+              <tr>
+                <td>Tedious Task:</td>
+                <td><input type="text" name="tediousTask" ng-model="data.tediousTask" required /></td>
+              </tr>
+              <tr>
+                <td>Dirty Task:</td>
+                <td><input type="text" name="dirtyTask" ng-model="data.dirtyTask" required /></td>
+              </tr>
+              <tr>
+                <td>Celebrity:</td>
+                <td><input type="text" name="celebrity" ng-model="data.celebrity" required /></td>
+              </tr>
+              <tr>
+                <td>Useless Skill:</td>
+                <td><input type="text" name="uselessSkill" ng-model="data.uselessSkill" required /></td>
+              </tr>
+              <tr>
+                <td>Adjective:</td>
+                <td><input type="text" name="adjective" ng-model="data.adjective" required /></td>
+              </tr>
+              <tr>
+                <td>Obnoxious Celebrity:</td>
+                <td><input type="text" name="obnoxiousCelebrity" ng-model="data.obnoxiousCelebrity" required /></td>
+              </tr>
+              <tr>
+                <td>Huge Number:</td>
+                <td><input type="number" name="hugeNumber" ng-model="data.hugeNumber" required /></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><input type="submit" class="generate" ng-click="submit()" value="Generate My Mad Lib" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <div class="error" ng-if="myForm.$submitted" ng-messages="myForm.$error">
+          <span ng-message="required">All fields are required before you can submit, please!</span>
+        </div>
       </div>
-      <div class="text">
-        <p>{{ name }} was a {{ jobTitle }} who loved technology. Although {{ heShe }} loved parts of {{ hisHer }} job, {{ heShe }} absolutely hated {{ tediousTask }} and {{ dirtyTask }}. So, {{ name }} met with {{ hisHer }} life mentor {{ celebrity }} who told {{ himHer }} to learn how to {{ uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ uselessSkill }}, so {{ heShe }} decided to study programming instead.</p>
-        <p>What a great decision! With {{ hisHer }} new skills, {{ name }} built a(n) {{ adjective }} robot named {{ obnoxiousCelebrity}} that loved to {{ dirtyTask }} but did it {{ hugeNumber }} times faster.</p>
+      <div class="text" ng-hide="top == 'top'">
+        <p>
+          {{ data.name }} was a {{ data.jobTitle }} who loved technology. Although {{ heShe }} loved parts of {{ hisHer }} job, {{ heShe }} absolutely hated {{ data.tediousTask }} and {{ data.dirtyTask }}. So, {{ data.name }} met with {{ hisHer }} life mentor {{ data.celebrity }} who told {{ himHer }} to learn how to {{ data.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ data.uselessSkill }}, so {{ heShe }} decided to study programming instead.
+        </p>
+        <p>
+          What a great decision! With {{ hisHer }} new skills, {{ data.name }} built a(n) {{ data.adjective }} robot named {{ data.obnoxiousCelebrity}} that loved to {{ data.dirtyTask }} but did it {{ data.hugeNumber }} times faster.
+        </p>
+        <button class="reset" ng-click="reset()">Start Over</button>
       </div>
     </div>
     <script src="js/myApp.js" type="text/javascript"></script>
+    <script src="js/angular-messages.js" type="text/javascript"></script>
   </body>
 </html>

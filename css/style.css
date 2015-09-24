@@ -16,6 +16,7 @@ p {
 }
 input {
   height: 1.5rem;
+  vertical-align: middle;
   padding: 2px;
 }
 input[type="text"],
@@ -66,11 +67,142 @@ table {
   margin: 2rem auto;
 }
 .provide {
- margin: 2rem 0 1rem 3rem;
+  margin: 2rem 0 1rem 3rem;
+}
+.generate {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-top: 1px solid #b09d9d;
+  background: #cf3636;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ad1010), to(#cf3636));
+  background: -webkit-linear-gradient(top, #ad1010, #cf3636);
+  background: -moz-linear-gradient(top, #ad1010, #cf3636);
+  background: -ms-linear-gradient(top, #ad1010, #cf3636);
+  background: -o-linear-gradient(top, #ad1010, #cf3636);
+  padding: 5px 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 1px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #FFFFFF;
+  width: 12rem;
+  height: 2rem;
+  margin: 1rem 0;
+}
+.generate:hover {
+   border-top-color: #f71818;
+   background: #f71818;
+   color: #ffffff;
+   }
+.error {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #FF0000;
+  margin-bottom: 2rem;
 }
 .text {
   outline: 2px solid #000000;
   height: auto;
   width: 100%;
   display: inline-block;
+}
+.reset {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-top: 1px solid #b09d9d;
+  background: #cf3636;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ad1010), to(#cf3636));
+  background: -webkit-linear-gradient(top, #ad1010, #cf3636);
+  background: -moz-linear-gradient(top, #ad1010, #cf3636);
+  background: -ms-linear-gradient(top, #ad1010, #cf3636);
+  background: -o-linear-gradient(top, #ad1010, #cf3636);
+  padding: 5px 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 1px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #FFFFFF;
+  width: 8rem;
+  height: 2rem;
+  margin: 2rem auto;
+  display: block;
+}
+.reset:hover {
+  border-top-color: #f71818;
+  background: #f71818;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 641px) and (max-width: 1200px) {
+  
+  .main {
+    width: 75%;
+  }
+  .logo {
+    width: 275px;
+  }
+  .smiley {
+    width: 80px;
+  }
+  .header-right,.header-left {
+    height: 8rem;
+  }
+}
+
+@media screen and (min-width: 371px) and (max-width: 640px) {
+  
+  .main {
+    width: 90%;
+  }
+  .logo {
+    width: 200px;
+  }
+  .smiley {
+    width: 60px;
+  }
+  .header-right,.header-left {
+    height: 7rem;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  
+  .main {
+    width: 90%;
+  }
+  .logo {
+    width: 175px;
+  }
+  .smiley {
+    width: 50px;
+  }
+  .header-right,.header-left {
+    height: 6rem;
+  }
+  table {
+  width: 80%;
+  margin: 1rem auto;
+  }
+  input[type="text"],
+  input[type="number"] {
+    width: 80%;
+  }
+  .generate {
+    font-size: .85rem;
+    width: 10rem;
+  }
+  .provide {
+  margin: 1rem 0 0 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
 }
