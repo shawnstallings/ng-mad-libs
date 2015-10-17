@@ -2,10 +2,12 @@
 <html lang="en" ng-app='myApp'>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NG MadLibs</title>    
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Itim' rel='stylesheet' type='text/css'>
-    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script data-require="angular-animate@1.3.11" data-semver="1.3.11" src="https://code.angularjs.org/1.3.11/angular-animate.js"></script>
   </head>
   <body ng-controller="MyCtrl">
     <div class="main">
@@ -17,57 +19,58 @@
           <img src="images/ng-mad-libs-logo.png" alt="Mad Libs Logo" class="logo">
         </div>
       </div>
-      <div class="enter-words" ng-show="top == 'top'">
+      <div class="outline">
+      <div class="enterWords {{ enterFade }}">
         <h1 class="provide">Pick a gender and provide the following words:</h1>
         <form name="myForm" novalidate ng-submit="submit()">
           <table>
             <tbody>
               <tr>
-                <td>Gender:</td>
+                <td class="title">Gender:</td>
                 <td class="gender">
                   <input type="radio" ng-model="gender" ng-click="male()" value="male"/>Male
                   <input type="radio" ng-model="gender" ng-click="female()" value="female"/>Female
                 </td>
               </tr>
               <tr>
-                <td>Name:</td>
-                <td><input type="text" name="name" ng-model="data.name" required /></td>
+                <td class="title">Name:</td>
+                <td><input type="text" class="field" name="name" ng-model="data.name" required /></td>
               </tr>
               <tr>
-                <td>Job Title:</td>
-                <td><input type="text" name="jobTitle" ng-model="data.jobTitle" required /></td>
+                <td class="title">Job Title:</td>
+                <td><input type="text" class="field" name="jobTitle" ng-model="data.jobTitle" required /></td>
               </tr>
               <tr>
-                <td>Tedious Task:</td>
-                <td><input type="text" name="tediousTask" ng-model="data.tediousTask" required /></td>
+                <td class="title">Tedious Task:</td>
+                <td><input type="text" class="field" name="tediousTask" ng-model="data.tediousTask" required /></td>
               </tr>
               <tr>
-                <td>Dirty Task:</td>
-                <td><input type="text" name="dirtyTask" ng-model="data.dirtyTask" required /></td>
+                <td class="title">Dirty Task:</td>
+                <td><input type="text" class="field" name="dirtyTask" ng-model="data.dirtyTask" required /></td>
               </tr>
               <tr>
-                <td>Celebrity:</td>
-                <td><input type="text" name="celebrity" ng-model="data.celebrity" required /></td>
+                <td class="title">Celebrity:</td>
+                <td><input type="text" class="field" name="celebrity" ng-model="data.celebrity" required /></td>
               </tr>
               <tr>
-                <td>Useless Skill:</td>
-                <td><input type="text" name="uselessSkill" ng-model="data.uselessSkill" required /></td>
+                <td class="title">Useless Skill:</td>
+                <td><input type="text" class="field" name="uselessSkill" ng-model="data.uselessSkill" required /></td>
               </tr>
               <tr>
-                <td>Adjective:</td>
-                <td><input type="text" name="adjective" ng-model="data.adjective" required /></td>
+                <td class="title">Adjective:</td>
+                <td><input type="text" class="field" name="adjective" ng-model="data.adjective" required /></td>
               </tr>
               <tr>
-                <td>Obnoxious Celebrity:</td>
-                <td><input type="text" name="obnoxiousCelebrity" ng-model="data.obnoxiousCelebrity" required /></td>
+                <td class="title">Obnoxious Celebrity:</td>
+                <td><input type="text" class="field" name="obnoxiousCelebrity" ng-model="data.obnoxiousCelebrity" required /></td>
               </tr>
               <tr>
-                <td>Huge Number:</td>
-                <td><input type="number" name="hugeNumber" ng-model="data.hugeNumber" required /></td>
+                <td class="title">Huge Number:</td>
+                <td><input type="number" class="field" name="hugeNumber" ng-model="data.hugeNumber" required /></td>
               </tr>
               <tr>
                 <td></td>
-                <td><input type="submit" class="generate" ng-click="submit()" value="Generate My Mad Lib" /></td>
+                <td><input type="submit" class="generate" ng-click="submit()" value="Generate MadLib" /></td>
               </tr>
             </tbody>
           </table>
@@ -76,7 +79,7 @@
           <span ng-message="required">All fields are required before you can submit, please!</span>
         </div>
       </div>
-      <div class="text" ng-hide="top == 'top'">
+      <div class="text {{ textFade }}">
         <p>
           {{ data.name }} was a {{ data.jobTitle }} who loved technology. Although {{ heShe }} loved parts of {{ hisHer }} job, {{ heShe }} absolutely hated {{ data.tediousTask }} and {{ data.dirtyTask }}. So, {{ data.name }} met with {{ hisHer }} life mentor {{ data.celebrity }} who told {{ himHer }} to learn how to {{ data.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ data.uselessSkill }}, so {{ heShe }} decided to study programming instead.
         </p>
@@ -86,6 +89,7 @@
         <button class="reset" ng-click="reset()">Start Over</button>
       </div>
     </div>
+    </div> <!-- End of Outline Div -->
     <script src="js/myApp.js" type="text/javascript"></script>
     <script src="js/angular-messages.js" type="text/javascript"></script>
   </body>
